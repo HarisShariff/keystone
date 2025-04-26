@@ -28,7 +28,8 @@ jobs:
         id: prepare
         run: |
           SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
-          IMAGE_BASE=ghcr.io/${{ github.repository }}/keystone
+          # Convert the repository name to lowercase
+          IMAGE_BASE=ghcr.io/$(echo "${GITHUB_REPOSITORY}" | tr '[:upper:]' '[:lower:]')/keystone  # Ensure the repo name is lowercase
 
           echo "short_tag=${IMAGE_BASE}:${SHORT_SHA}" >> $GITHUB_OUTPUT
           echo "latest_tag=${IMAGE_BASE}:latest" >> $GITHUB_OUTPUT

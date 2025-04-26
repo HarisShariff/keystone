@@ -7,6 +7,8 @@
 # This could be for the core logic of your IAM system, so make sure to adjust as necessary.
 internal/* @HarisShariff @team-backend
 
+/.github/* @HarisShariff
+
 # Request review for changes in specific files
 Dockerfile @HarisShariff @team-devops
 
