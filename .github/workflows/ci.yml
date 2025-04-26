@@ -1,0 +1,56 @@
+name: Keystone CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      build_status: ${{ steps.build-step.outcome }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.21" # or your Go version
+
+      - name: Install dependencies
+        run: go mod tidy
+
+      - name: Build
+        id: build-step
+        run: go build ./...
+
+      - name: Run tests
+        run: go test ./...
+
+      - name: Check Go formatting
+        run: test -z "$(gofmt -l .)" || (echo "gofmt found improperly formatted files:" && gofmt -l . && exit 1)
+
+  comment:
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Comment on PR with dynamic status
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          header: Go CI Result
+          message: |
+            **Go CI Status**
+
+            - **Build**: ${{ needs.build.result == 'success' && '✅ Build Passed' || '❌ Build Failed' }}

@@ -33,16 +33,6 @@ Keystone supports:
 
 Built with clean architecture principles, secure token handling, and modular design.
 
-## Features
-
-- Dual Operation Modes: HTTP server or Go library.
-- Clean Architecture: Transport and storage separated via interfaces.
-- Secure Authentication: Password hashing (bcrypt), JWT access/identity tokens.
-- Role-Based Access Control (RBAC): Simple and extensible role support.
-- Pluggable Storage: Oracle database backend (PostgreSQL and others in future).
-- Dockerized Deployment: Lightweight container image.
-- Minimal External Dependencies: Standard library preferred.
-
 ## Why Keystone?
 
 Keystone is designed for developers and teams who need lightweight, secure, and embeddable Identity and Access Management (IAM) — without the heavy baggage of traditional solutions like Keycloak or Auth0.
@@ -55,6 +45,16 @@ Our focus is simple:
 - **Extendable for the future**: While our core remains lightweight, Keystone is designed to evolve — future modules like OAuth2, SSO, and MFA can be added without sacrificing the clean, modular architecture.
 
 Keystone exists for those who need an identity system that is **small, strong, and foundational** — not one that demands you bring a battleship to a fishing trip.
+
+## Features
+
+- Dual Operation Modes: HTTP server or Go library.
+- Clean Architecture: Transport and storage separated via interfaces.
+- Secure Authentication: Password hashing (bcrypt), JWT access/identity tokens.
+- Role-Based Access Control (RBAC): Simple and extensible role support.
+- Pluggable Storage: Oracle database backend (PostgreSQL and others in future).
+- Dockerized Deployment: Lightweight container image.
+- Minimal External Dependencies: Standard library preferred.
 
 ## Getting Started
 
