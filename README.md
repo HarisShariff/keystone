@@ -1,8 +1,8 @@
 # Keystone
 
 <p align="center">
-  <a href="https://github.com/HarisShariff/keystone/actions/workflows/build.yml">
-    <img alt="Build Status" src="https://github.com/HarisShariff/keystone/actions/workflows/build.yml/badge.svg">
+  <a href="https://github.com/HarisShariff/keystone/actions/workflows/build-and-push-main.yml">
+    <img alt="Build Status" src="https://github.com/HarisShariff/keystone/actions/workflows/build-and-push-main.yml/badge.svg">
   </a>
   <a href="https://goreportcard.com/report/github.com/HarisShariff/keystone">
     <img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/HarisShariff/keystone">
