@@ -1,0 +1,18 @@
+# This is a sample CODEOWNERS file.
+
+# Automatically request a review from @HarisShariff for changes in the root directory.
+* @HarisShariff
+
+# Request review for any changes to code in the `/internal` directory.
+# This could be for the core logic of your IAM system, so make sure to adjust as necessary.
+internal/* @HarisShariff @team-backend
+
+# Request review for changes in specific files
+Dockerfile @HarisShariff @team-devops
+
+# Example: If you have a `config` folder that requires special attention
+/config/* @HarisShariff @team-ops
+
+# You can even specify teams for broader review requirements
+# For example, if you have a team handling authentication and security-related files:
+auth/* @team-auth
