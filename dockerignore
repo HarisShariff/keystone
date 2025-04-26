@@ -1,0 +1,33 @@
+# Ignore Git files and metadata
+.git
+.gitignore
+.github
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+
+# Ignore build artifacts
+bin/
+build/
+*.exe
+*.out
+*.test
+
+# Ignore Dockerfile (just in case, to avoid accidentally including it)
+Dockerfile
+
+# Ignore unnecessary files (e.g., for tests, documentation, etc.)
+tests/
+docs/
+README.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE
+
+# Ignore Go module files
+go.sum
+
+# Ignore temporary files
+*.log
+*.tmp
