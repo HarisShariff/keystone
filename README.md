@@ -46,6 +46,8 @@ Our focus is simple:
 
 Keystone exists for those who need an identity system that is **small, strong, and foundational** — not one that demands you bring a battleship to a fishing trip.
 
+Keystone is not only a lightweight IAM solution — it’s also a project designed for learning and sharing how authentication, authorization, and security systems work underneath. We believe understanding the foundations is just as important as building secure applications, and Keystone aims to provide both a useful tool and an open blueprint.
+
 ## Features
 
 - Dual Operation Modes: HTTP server or Go library.
