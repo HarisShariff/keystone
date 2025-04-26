@@ -23,8 +23,7 @@
 
 Small. Strong. Foundational.
 
-Keystone is a lightweight, open-source Identity and Access Management (IAM) system for Go.
-It provides a clean, embeddable alternative to bulky solutions like Keycloak, perfect for internal systems such as hospitals, manufacturing setups, and SMEs.
+Keystone is a lightweight, open-source Identity and Access Management (IAM) system built with Go. It’s designed to offer a simple, secure, and embeddable alternative to complex IAM solutions like Keycloak or Auth0. Whether you’re developing internal back-office systems for a medical group, manufacturing unit, or any SME, Keystone provides everything you need to manage users, roles, and secure authentication without unnecessary complexity.
 
 Keystone supports:
 
