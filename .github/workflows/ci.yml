@@ -59,6 +59,9 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
 
+    permissions:
+      pull-requests: write # Explicitly allow writing to PR comments
+
     steps:
       - name: Comment on PR with dynamic status
         uses: marocchino/sticky-pull-request-comment@v2
