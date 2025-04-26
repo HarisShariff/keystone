@@ -1,0 +1,75 @@
+name: Keystone CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      build_status: ${{ steps.build-step.outcome }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.23.4"
+
+      - name: Install dependencies
+        run: go mod tidy
+
+      - name: Build (skip if no packages)
+        id: build-step
+        run: |
+          if go list ./... | grep -q .; then
+            go build ./...
+          else
+            echo "No packages to build."
+          fi
+
+      - name: Run tests (skip if no packages)
+        run: |
+          if go list ./... | grep -q .; then
+            go test ./...
+          else
+            echo "No tests to run."
+          fi
+
+      - name: Check Go formatting (skip if no packages)
+        run: |
+          if go list ./... | grep -q .; then
+            test -z "$(gofmt -l .)" || (echo "gofmt found improperly formatted files:" && gofmt -l . && exit 1)
+          else
+            echo "No Go files to format."
+          fi
+
+  comment:
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+
+    permissions:
+      pull-requests: write # Explicitly allow writing to PR comments
+
+    steps:
+      - name: Comment on PR with dynamic status
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          header: Go CI Result
+          message: |
+            **Go CI Status**
+
+            - **Build**: ${{ needs.build.result == 'success' && '✅ Build Passed' || '❌ Build Failed' }}
+            - **Tests**: ${{ needs.build.result == 'success' && '✅ Tests Passed' || '❌ Tests Failed' }}
