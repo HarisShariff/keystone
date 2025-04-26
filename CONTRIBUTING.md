@@ -34,18 +34,41 @@ feat/add-refresh-token-support
 bug/fix-password-hashing
 task/update-dockerfile
 
-### 4. Make Your Changes
+### 4. Commit Message Format
+
+To ensure consistency and clarity, please follow the Conventional Commits format for your commit messages:
+
+- feat: A new feature
+- Example: feat: add user authentication
+- fix: A bug fix
+- Example: fix: resolve login issue with invalid credentials
+- docs: Documentation updates (e.g., README, comments)
+- Example: docs: update contributing guidelines
+- style: Code style changes (e.g., formatting, spacing)
+- Example: style: format README.md
+- refactor: Refactoring existing code
+- Example: refactor: simplify authentication logic
+- test: Adding or updating tests
+- Example: test: add unit tests for user service
+- chore: Miscellaneous changes
+- Example: chore: update Go version in CI config
+- perf: Performance improvements
+- Example: perf: optimize user query handling
+
+Please ensure your commit messages adhere to this format.
+
+### 5. Make Your Changes
 
 - Follow the project's existing coding style.
 - Write clear, maintainable, and minimalistic code.
 - Keep commits small and focused.
 
-### 5. Write Tests (When Applicable)
+### 6. Write Tests (When Applicable)
 
 - Unit tests are highly encouraged, especially for core logic.
 - Testing adapters (DB/HTTP) is optional for early MVP.
 
-### 6. Submit a Pull Request
+### 7. Submit a Pull Request
 
 - Reference the related issue number in your pull request.
 - Provide a clear description of what you changed and why.
