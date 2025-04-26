@@ -1,0 +1,25 @@
+name: Task
+description: A small unit of work, infra change, or cleanup
+type: task
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Task Title
+      placeholder: e.g. Set up Redis in docker-compose
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context or Background
+      description: Why are we doing this?
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: Subtasks
+      description: Break down the work if needed
+      placeholder: |
+        - [ ] Install Redis locally
+        - [ ] Add config file
+        - [ ] Update compose file

@@ -1,0 +1,31 @@
+name: Bug
+description: Report something that’s broken
+type: bug
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Bug Title
+      placeholder: e.g. Embedding vector is not saved
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: List the exact steps to reproduce the bug
+      placeholder: |
+        1. Call POST /embed
+        2. Observe empty response
+        3. Check logs
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have happened?
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
